@@ -13,62 +13,53 @@ import javax.swing.JTabbedPane;
 public class App {
 	
 	public static void main(String[] args) {
-	JFrame frame = new JFrame("Filmokas");
+	JFrame frame = new JFrame("Movies");
 	
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(800, 500);
 	
-	
 	JPanel janela = new JPanel(new BorderLayout(20,0));
-	JPanel icone = new JPanel();
-	JPanel informacoes = new JPanel(new GridLayout(0,1));
-	JPanel avaliacoes = new JPanel(new GridLayout(0,1));
-	avaliacoes.setPreferredSize(new Dimension(130,400));
+	JPanel icon = new JPanel();
+	JPanel info = new JPanel(new GridLayout(0,1));
+	JPanel rate = new JPanel(new GridLayout(0,1));
+	rate.setPreferredSize(new Dimension(130,400));
 	JPanel botao = new JPanel();
 	
-	janela.add(icone, BorderLayout.WEST);
-	janela.add(informacoes, BorderLayout.CENTER);
-	janela.add(avaliacoes, BorderLayout.EAST);
+	janela.add(icon, BorderLayout.WEST);
+	janela.add(info, BorderLayout.CENTER);
+	janela.add(rate, BorderLayout.EAST);
 	janela.add(botao, BorderLayout.SOUTH);
-	
 		
 	//imagem
-	icone.add(new MinhaImagem(new ImageIcon("C:\\FIAP\\2021\\JAVA\\Filmokas\\Imagens\\leao2.jpg")));
-	
-	
-	
+	icon.add(new Imagem(new ImageIcon("D:\Documentos\FIAP\ProjetoFilmes\fiap-filmes\projeto-filmes\Imagens\toystory.jpg")));
+		
 	//titulo
-	informacoes.add(new MeuLabel("Titulo"));
-	informacoes.add(new MeuTextField());
+	info.add(new Label("Titulo"));
+	info.add(new TextField());
 	
 	//sinopse
-	informacoes.add(new MeuLabel("Sinopse"));
-	informacoes.add(new MeuTextField());
+	info.add(new Label("Sinopse"));
+	info.add(new TextField());
 	
 	//genero
-	informacoes.add(new MeuLabel("Genero"));
-	String[] genero = {"com�dia", "drama", "terror"};
-	informacoes.add(new JComboBox<String>(genero));
+	info.add(new Label("Genero"));
+	String[] genero = {"Animação", "Comedia", "Ação"};
+	info.add(new JComboBox<String>(genero));
 	
 	//onde assistir
-	avaliacoes.add(new MeuLabel("Onde assistir?"));
-	List<String> listaDeOpcoes = List.of("Netflix", "Amazon", "Pirate Bay");
-	MeuRadioGroup group = new MeuRadioGroup(listaDeOpcoes );
-	avaliacoes.add(group);
+	rate.add(new Label("Onde assistir?"));
+	List<String> listaOpcoes = List.of("Disney Plus", "Amazon Prime", "Netflix");
+	RadioGroup group = new RadioGroup(listaOpcoes);
+	rate.add(group);
 	
 	//assistido
-	avaliacoes.add(new MeuCheckBox("assistido"));
-	avaliacoes.add(new MeuLabel("Avaliacao"));
-	avaliacoes.add(new StarRater(5, 0));
+	rate.add(new CheckBox("Assistido"));
+	rate.add(new Label("Avaliacao"));
+	rate.add(new StarRater(5, 0));
 	JButton salvar = new JButton("Salvar");
 	JButton cancelar = new JButton("Cancelar");
 	botao.add(salvar);
 	botao.add(cancelar);
-	
-	
-	
-	
-	
 	
 	JTabbedPane abas = new JTabbedPane();
 	

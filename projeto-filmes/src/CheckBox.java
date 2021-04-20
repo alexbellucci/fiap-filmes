@@ -1,10 +1,10 @@
 import javax.swing.JCheckBox;
 
-public class MeuCheckBox extends JCheckBox{
+public class CheckBox extends JCheckBox{
 	
 	private static final long serialVersionUID = 1L;
 
-	public MeuCheckBox(String texto) {
+	public CheckBox(String texto) {
 		super(texto);
 	}
 

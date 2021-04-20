@@ -4,11 +4,11 @@ import java.awt.Font;
 
 import javax.swing.JLabel;
 
-public class MeuLabel extends JLabel {
+public class Label extends JLabel {
 	
 	private static final long serialVersionUID = 1L;
 	
-	public MeuLabel(String texto) {
+	public Label(String texto) {
 		super(texto);
 		init();		
 	}

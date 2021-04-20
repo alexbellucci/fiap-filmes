@@ -2,11 +2,11 @@ import java.awt.Dimension;
 import javax.swing.JTextField;
 
  
-public class MeuTextField extends JTextField {
+public class TextField extends JTextField {
 
     private static final long serialVersionUID = 1L;
     
-    public MeuTextField() {
+    public TextField() {
         super();
         init();
     }
